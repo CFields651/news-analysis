@@ -1,4 +1,5 @@
-curl -sS "https://gnews.io/api/v4/search?q=President%20Trump&lang=en&country=us&apikey=$gnews_api_key" > ~/Downloads/gnews.trump.out
+#curl -sS "https://gnews.io/api/v4/search?q=President%20Trump&lang=en&country=us&max=10&apikey=$gnews_api_key" > ~/Downloads/gnews.trump.out
+curl -sS "https://gnews.io/api/v4/top-headlines?category=general&&lang=en&country=us&apikey=$gnews_api_key"  > ~/Downloads/gnews.trump.out
 
 cat ~/Downloads/gnews.trump.out | jq '.articles[] | {
     title: .title, 
